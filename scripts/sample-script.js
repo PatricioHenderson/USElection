@@ -24,6 +24,7 @@ async function main() {
   const usElection = await USElection.deploy();
   await usElection.deployed();
   console.log("USElection deployed to:", usElection.address);
+  
 }
 
 // We recommend this pattern to be able to use async/await everywhere

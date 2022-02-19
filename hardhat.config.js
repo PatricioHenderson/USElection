@@ -33,7 +33,7 @@ subtask("print", "Prints a message")
 task("deploy-mainnet", "Deploys contract on a provided network")
   .addParam("privateKey", "Please provide the private key")
   .setAction(async ({privateKey}) => {
-    const deployElectionContract = require("./scripts/deploy-with-param");
+    const deployElectionContract = require("./scripts/deploy-with-params");
     await deployElectionContract(privateKey);
   });
 // You need to export an object to set up your config
@@ -61,13 +61,21 @@ task("deploy-mainnet", "Deploys contract on a provided network")
     ropsten: {
       url : "https://ropsten.infura.io/v3/dd0b0425f5eb45e78d52071d75f6c147",
       // url: "https://ropsten.infura.io/v3/40c2813049e44ec79cb4d7e0d18de173",
-      accounts: ["a425cc857ba34792352eec57f7006098d4a39b1b7b6e6178094655ea628e3af6"]
-      
+      accounts: ["a425cc857ba34792352eec57f7006098d4a39b1b7b6e6178094655ea628e3af6"]      
     },
     // etherscan: {
+    //   apiKey: {
+    //     ropsten: 'BRDQPJCF3U1VNGCQ5I972N6UWZW9TDFU48'
+    //   }
+    // }
+  
+    // etherscan: {
+    //   url: "https://ropsten.etherscan.io/",
     //   // Your API key for Etherscan
     //   // Obtain one at https://etherscan.io/
-    //   apiKey: "CHIRAADNUI814XIT9ST36R63UFNBNDKBDY"
+    //   // The network you want to use
+    //   // network: "ropsten",
+    //   apiKey: "BRDQPJCF3U1VNGCQ5I972N6UWZW9TDFU48" 
     // }
   },
 };
