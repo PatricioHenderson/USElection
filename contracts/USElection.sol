@@ -41,6 +41,7 @@ contract USElection is Ownable {
         seats[winner] += result.stateSeats;
         resultsSubmited[result.name] = true;
         
+        
         emit LogStateResult(winner, result.stateSeats, result.name);
     }
     
@@ -50,7 +51,6 @@ contract USElection is Ownable {
         } else {
             return TRUMP;
         }
-        return 0; 
     }
     
     function endElection() public onlyOwner onlyActiveElection{

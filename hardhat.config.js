@@ -44,7 +44,6 @@ task("deploy-mainnet", "Deploys contract on a provided network")
  * @type import('hardhat/config').HardhatUserConfig
  */
  module.exports = {
-  solidity: "0.8.4",
   solidity: {
     version: "0.8.0",
     settings: {
@@ -70,7 +69,7 @@ task("deploy-mainnet", "Deploys contract on a provided network")
     // }
   
     // etherscan: {
-    //   url: "https://ropsten.etherscan.io/",
+    //   // url: "https://ropsten.etherscan.io/",
     //   // Your API key for Etherscan
     //   // Obtain one at https://etherscan.io/
     //   // The network you want to use

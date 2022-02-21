@@ -53,7 +53,7 @@ const run = async function() {
 	const wallet = new hre.ethers.Wallet("0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80", provider)
 	const balance = await wallet.getBalance();
 
-	const electionContract = new hre.ethers.Contract("0xc9707E1e496C12f1Fa83AFbbA8735DA697cdBf64", USElection.abi, wallet)
+	const electionContract = new hre.ethers.Contract("0x5FbDB2315678afecb367f032d93F642f64180aa3", USElection.abi, wallet)
 	
 	const transactionOhio = await electionContract.submitStateResult(["Ohio", 250, 150, 24]);
 	const transactionReceipt = await transactionOhio.wait();
@@ -62,7 +62,7 @@ const run = async function() {
 		return 
 	}
 
-	const resultsSubmittedOhioNew = await electionContract.resultsSubmitted("Ohio")
+	const resultsSubmittedOhioNew = await electionContract.resultsSubmited("Ohio")
 	console.log("Results submitted for Ohio", resultsSubmittedOhioNew);
 
 	const currentLeader = await electionContract.currentLeader();
